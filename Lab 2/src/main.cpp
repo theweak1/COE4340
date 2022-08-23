@@ -246,87 +246,82 @@ void loop() {
     // Set the state flag, 1=gree,2=yellow and 3=red
     // Set Green ON, ref and Yellow OFF
     //  Green State for first traffic light
-    if (Flag != 0 || Flag2 != 0) {
-      digitalWrite(red, LOW);
-      digitalWrite(yellow, LOW);
-      digitalWrite(green, HIGH);
-      digitalWrite(cross, LOW);
-      // red State for second traffic light
-      digitalWrite(red2, HIGH);
-      digitalWrite(yellow2, LOW);
-      digitalWrite(green2, LOW);
-      digitalWrite(cross2, LOW);
-    }
-  else {
-
-    for (i = 0; i <= Green_time; i++) {
-      delay(Delay_time);
-      if (Flag == 1 || Flag2 == 1) {
-        Ligth_State = 1;
-        Pedestian();
-        goto LOOP;
-      }
-    }
-    // Yellow State just for the first traffic light
-    digitalWrite(green, LOW);
-    digitalWrite(yellow, HIGH);
-    for (i = 0; i <= Yellow_time; i++) {
-      delay(Delay_time);
-      if (Flag == 1 || Flag2 == 1) {
-        Ligth_State = 2;
-        Pedestian();
-        goto LOOP;
-      }
-    }
-    // Red State just for the first traffic light
-    digitalWrite(yellow, LOW);
-    digitalWrite(red, HIGH);
-    digitalWrite(red2, LOW);
-    digitalWrite(green2, HIGH);
-    for (i = 0; i <= Red_time; i++) {
-      delay(Delay_time);
-      if (Flag == 1 || Flag2 == 1) {
-        Ligth_State = 3;
-        Pedestian();
-        goto LOOP;
-      }
-    }
-    // Green State for second traffic light
-    // digitalWrite(red2, LOW);
-    // digitalWrite(green2, HIGH);
-    // digitalWrite();
-    for (i = 0; i <= Green_time; i++) {
-      delay(Delay_time);
-      if (Flag == 1 || Flag2 == 1) {
-        Ligth_State = 4;
-        Pedestian();
-        goto LOOP;
-      }
-    }
-    // Yellow State for the second traffic light
-    digitalWrite(green2, LOW);
-    digitalWrite(yellow2, HIGH);
-    for (i = 0; i <= Red_time; i++) {
-      delay(Delay_time);
-      if (Flag == 1 || Flag2 == 1) {
-        Ligth_State = 5;
-        Pedestian();
-        goto LOOP;
-      }
-    }
-    // Red State for the second traffic light
-    digitalWrite(yellow2, LOW);
-    digitalWrite(red2, HIGH);
-    //added to change traffic light 1 from red to green
     digitalWrite(red, LOW);
-    digitalWrite(green, HIGH);
-    for (i = 0; i <= Red_time; i++) {
-      delay(Delay_time);
-      if (Flag == 1 || Flag2 == 1) {
-        Ligth_State = 6;
-        Pedestian();
-        goto LOOP;
-      }
+  digitalWrite(yellow, LOW);
+  digitalWrite(green, HIGH);
+  digitalWrite(cross, LOW);
+  // red State for second traffic light
+  digitalWrite(red2, HIGH);
+  digitalWrite(yellow2, LOW);
+  digitalWrite(green2, LOW);
+  digitalWrite(cross2, LOW);
+
+  for (i = 0; i <= Green_time; i++) {
+    delay(Delay_time);
+    if (Flag == 1 || Flag2 == 1) {
+      Ligth_State = 1;
+      Pedestian();
+      goto LOOP;
+    }
+  }
+  // Yellow State just for the first traffic light
+  digitalWrite(green, LOW);
+  digitalWrite(yellow, HIGH);
+  for (i = 0; i <= Yellow_time; i++) {
+    delay(Delay_time);
+    if (Flag == 1 || Flag2 == 1) {
+      Ligth_State = 2;
+      Pedestian();
+      goto LOOP;
+    }
+  }
+  // Red State just for the first traffic light
+  digitalWrite(yellow, LOW);
+  digitalWrite(red, HIGH);
+  digitalWrite(red2, LOW);
+  digitalWrite(green2, HIGH);
+  for (i = 0; i <= Red_time; i++) {
+    delay(Delay_time);
+    if (Flag == 1 || Flag2 == 1) {
+      Ligth_State = 3;
+      Pedestian();
+      goto LOOP;
+    }
+  }
+  // Green State for second traffic light
+  // digitalWrite(red2, LOW);
+  // digitalWrite(green2, HIGH);
+  // digitalWrite();
+  for (i = 0; i <= Green_time; i++) {
+    delay(Delay_time);
+    if (Flag == 1 || Flag2 == 1) {
+      Ligth_State = 4;
+      Pedestian();
+      goto LOOP;
+    }
+  }
+  // Yellow State for the second traffic light
+  digitalWrite(green2, LOW);
+  digitalWrite(yellow2, HIGH);
+  for (i = 0; i <= Red_time; i++) {
+    delay(Delay_time);
+    if (Flag == 1 || Flag2 == 1) {
+      Ligth_State = 5;
+      Pedestian();
+      goto LOOP;
+    }
+  }
+  // Red State for the second traffic light
+  digitalWrite(yellow2, LOW);
+  digitalWrite(red2, HIGH);
+  digitalWrite(red, LOW);
+  digitalWrite(green, HIGH);
+  for (i = 0; i <= Red_time; i++) {
+    delay(Delay_time);
+    if (Flag == 1 || Flag2 == 1) {
+      Ligth_State = 6;
+      Pedestian();
+      goto LOOP;
     }
   }
 }
