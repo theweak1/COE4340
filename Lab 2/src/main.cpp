@@ -15,7 +15,6 @@
 #define yellow2 19
 #define green2 20
 
-
 #define button 2
 #define button_2 3
 #define Delay_time 500
@@ -292,6 +291,7 @@ LOOP:
   digitalWrite(yellow2, LOW);
   digitalWrite(green2, LOW);
   digitalWrite(cross2, LOW);
+
   for (i = 0; i <= Green_time; i++)
   {
     delay(Delay_time);
@@ -318,6 +318,8 @@ LOOP:
   // Red State just for the first traffic light
   digitalWrite(yellow, LOW);
   digitalWrite(red, HIGH);
+  digitalWrite(red2, LOW);
+  digitalWrite(green2, HIGH);
   for (i = 0; i <= Red_time; i++)
   {
     delay(Delay_time);
@@ -329,8 +331,8 @@ LOOP:
     }
   }
   // Green State for second traffic light
-  digitalWrite(red2, LOW);
-  digitalWrite(green2, HIGH);
+  // digitalWrite(red2, LOW);
+  // digitalWrite(green2, HIGH);
   // digitalWrite();
   for (i = 0; i <= Green_time; i++)
   {
@@ -345,7 +347,7 @@ LOOP:
   // Yellow State for the second traffic light
   digitalWrite(green2, LOW);
   digitalWrite(yellow2, HIGH);
-  for (i = 0; i <= Red_time; i++)
+  for (i = 0; i <= Yellow_time; i++)
   {
     delay(Delay_time);
     if (Flag == 1 || Flag2 == 1)
@@ -358,6 +360,8 @@ LOOP:
   // Red State for the second traffic light
   digitalWrite(yellow2, LOW);
   digitalWrite(red2, HIGH);
+  digitalWrite(red, LOW);
+  digitalWrite(green, HIGH);
   for (i = 0; i <= Red_time; i++)
   {
     delay(Delay_time);
