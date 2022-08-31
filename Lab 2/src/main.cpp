@@ -1,7 +1,7 @@
 #include <Arduino.h>
 
 /****************************************************/
-/* Laboratoy No 2 trafic light with pedestrian Light*/
+/* Laboratoy No 2 two trafic light with pedestrian Light*/
 /* Roman Lopez Ph. D. */
 /****************************************************/
 // Traffic Light 1
